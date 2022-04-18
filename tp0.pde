@@ -2,9 +2,6 @@
   size(500, 500);
   background(253, 188, 252);
 
-
-
-  println(mouseX, mouseY);
   ellipse(200, 175, 70, 130);
   fill(0);
   ellipse(195, 180, 15, 15);
