@@ -1,7 +1,9 @@
 PImage imagen;
-PImage imagenCreditos;
+PImage imagenCreditos1;
+PImage imagenCreditos2;
+PImage imagenCreditos3;
+PImage imagenCreditos4;
 PFont fuente;
-int numImagen = 1;
 int pantalla;
 int posXImageMain;
 int posYImageMain;
@@ -9,12 +11,16 @@ int posXTextMain;
 int posYTextMain;
 int segundos = 0;
 int posX;
+int posXImagenes;
 
 void setup() {
   size(500, 500);
   posXTextMain = 520;
   imagen = loadImage("main.jpg");
-  imagenCreditos = loadImage("foto" + numImagen + ".png");
+  imagenCreditos1 = loadImage("foto1.png");
+  imagenCreditos2 = loadImage("foto2.png");
+  imagenCreditos3 = loadImage("foto3.png");
+  imagenCreditos4 = loadImage("foto4.png");
   fuente = createFont("fuente.ttf", 40);
 }
 
@@ -83,15 +89,13 @@ void draw() {
 
   imageMode(CENTER);
   image(imagen, posXImageMain, posYImageMain, 200, 200);
-  
+
   //LOGICA PANTALLAS
 
   if (pantalla == 1) {
     background(0);
-    numImagen = pantalla;
 
-    imagenCreditos = loadImage("foto" + numImagen + ".png");
-    image(imagenCreditos, 350, height/2, 200, 200);
+    image(imagenCreditos1, posXImagenes, height/2, 200, 200);
 
     fill(49, 21, 100);
     rect(30, 430, 90, 30);
@@ -129,15 +133,17 @@ void draw() {
       posXTextMain = 520;
     }
 
+    if (posXImagenes >= 350) {
+      posXImagenes-=2;
+    }
+
     if (posX <= 50) {
       posX+=2;
     }
   } else if (pantalla == 2) {
     background(0);
-    numImagen = pantalla;
 
-    imagenCreditos = loadImage("foto" + numImagen + ".png");
-    image(imagenCreditos, 350, height/2, 200, 200);
+    image(imagenCreditos2, posXImagenes, height/2, 200, 200);
 
     fill(49, 21, 100);
     rect(30, 430, 90, 30);
@@ -175,15 +181,17 @@ void draw() {
       posXTextMain = 520;
     }
 
+    if (posXImagenes >= 350) {
+      posXImagenes-=2;
+    }
+
     if (posX <= 50) {
       posX+=2;
     }
   } else if (pantalla == 3) {
     background(0);
-    numImagen = pantalla;
 
-    imagenCreditos = loadImage("foto" + numImagen + ".png");
-    image(imagenCreditos, 350, height/2, 200, 200);
+    image(imagenCreditos3, posXImagenes, height/2, 200, 200);
 
     fill(49, 21, 100);
     rect(30, 430, 90, 30);
@@ -209,7 +217,7 @@ void draw() {
     textSize(15);
     text("DEVELOP", 393, 452);
 
-    fill(153, 252,154);
+    fill(153, 252, 154);
     smooth();
     textSize(40);
     text("GRAPHIC DESIGNERS", posXTextMain, posYTextMain);
@@ -221,15 +229,17 @@ void draw() {
       posXTextMain = 520;
     }
 
+    if (posXImagenes >= 350) {
+      posXImagenes-=2;
+    }
+
     if (posX <= 50) {
       posX+=2;
     }
   } else if (pantalla == 4) {
     background(0);
-    numImagen = pantalla;
 
-    imagenCreditos = loadImage("foto" + numImagen + ".png");
-    image(imagenCreditos, 350, height/2, 200, 200);
+    image(imagenCreditos4, posXImagenes, height/2, 200, 200);
 
     fill(49, 21, 100);
     rect(30, 430, 90, 30);
@@ -267,6 +277,10 @@ void draw() {
       posXTextMain = 520;
     }
 
+    if (posXImagenes >= 350) {
+      posXImagenes-=2;
+    }
+
     if (posX <= 50) {
       posX+=2;
     }
@@ -277,19 +291,22 @@ void mouseClicked() {
   if (mouseX > 30 && mouseX < 120 && mouseY > 430 && mouseY < 460) {
     pantalla = 1;
     posX = -170;
+    posXImagenes = 570;
     posXTextMain = 520;
   } else if (mouseX > 150 && mouseX < 240 && mouseY > 430 && mouseY < 460) {
     pantalla = 2;
     posX = -170;
+    posXImagenes = 570;
     posXTextMain = 520;
   } else if (mouseX > 260 && mouseX < 370 && mouseY > 430 && mouseY < 460) {
     pantalla = 3;
     posX = -170;
+    posXImagenes = 570;
     posXTextMain = 520;
   } else if (mouseX > 390 && mouseX < 480 && mouseY > 430 && mouseY < 460) {
     pantalla = 4;
     posX = -170;
+    posXImagenes = 570;
     posXTextMain = 520;
   }
 }
-
