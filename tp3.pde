@@ -8,6 +8,7 @@ int [] cartasGiradas = new int[cartasArray];
 int girar = -1;
 int girar1 = -1;
 Boolean gano = false;
+Boolean sobreBotonVideo = false;
 int pantalla;
 
 void setup() {
@@ -29,7 +30,6 @@ void setup() {
 }
 
 void draw() {
-  println(mouseX, mouseY, girar1);
   if (pantalla == 1) {
     background(43, 168, 224);
     push();
@@ -60,7 +60,7 @@ void draw() {
     rect(width/2, 550, 100, 50);
     textSize(20);
     fill(43, 168, 224);
-    text("Para jugar debe hacer click en las cartas, si encuentra un par de cartas iguales estara más cerca de la victoria, el juego termina cuando haya encontrado todos los pares de cartas.", width/2, height/2,400,400);
+    text("Para jugar debe hacer click en las cartas, si encuentra un par de cartas iguales estara más cerca de la victoria, el juego termina cuando haya encontrado todos los pares de cartas.", width/2, height/2, 400, 400);
     text("VOLVER", width/2, 550);
     pop();
   }
@@ -72,16 +72,28 @@ void draw() {
     fill(222, 213, 36);
     rect(width/2, height/2, 400, 400);
     rect(width/2, 550, 100, 50);
+    if (sobreBotonVideo == true) {
+      fill(22, 146, 201);
+    } else {
+      fill(22, 167, 201);
+    }
+    rect(width/2, 370, 100, 50);
     textSize(20);
     fill(43, 168, 224);
-    text("Juego diseñado y programado por Junior Vitteri.", width/2, height/2,400,400);
+    text("Juego diseñado y programado por Junior Vitteri.", width/2, height/2, 400, 400);
     text("VOLVER", width/2, 550);
+    fill(222, 213, 36);
+    text("VIDEO", width/2, 370);
     pop();
   }
 }
 
 
 void mousePressed() {
+  //--------------------------BOTON CON HIPERVINCULO-----------------------
+  if (sobreBotonVideo) { 
+    link("https://www.youtube.com/watch?v=VMZ8T6sHoJg");
+  }
   //--------------------------LOGICA BOTONES-----------------------
   if (mouseX > 350 && mouseX < 650 && mouseY > 250 && mouseY < 350 && pantalla == 1) {
     pantalla = 2;
@@ -153,4 +165,7 @@ void mousePressed() {
       }
     }
   }
+}
+void mouseMoved() { 
+  estadosBotonVideo();
 }
