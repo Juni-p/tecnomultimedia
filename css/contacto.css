@@ -1,0 +1,143 @@
+body {
+  font-family: "Cabin", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f3f4;
+}
+img {
+  max-width: 100%;
+}
+main {
+  flex-grow: 1;
+}
+header img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+header {
+  padding: 0.5rem 2rem;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header a {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #161a1d;
+}
+header a:hover,
+header a:active {
+  color: #e5383b;
+}
+@media (min-width: 1024px) {
+  header img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  header a {
+    font-size: 2.8rem;
+  }
+}
+/* form */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 2rem;
+  height: 100vh;
+}
+.wrapper .title h1 {
+  color: #e5383b;
+  text-align: center;
+}
+.contact-form {
+  display: flex;
+  width: 60vw;
+}
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+}
+.input-fields,
+.msg {
+  width: 48%;
+}
+.input-fields .input,
+.msg textarea {
+  margin: 10px 0;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #e5383b;
+  padding: 10px;
+  color: #e5383b;
+  width: 100%;
+}
+.msg textarea {
+  height: 212px;
+}
+.btn {
+  background: #e5383b;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+}
+@media screen and (max-width: 600px) {
+  .contact-form {
+    flex-direction: column;
+  }
+  .msg textarea {
+    height: 80px;
+  }
+  .input-fields,
+  .msg {
+    width: 100%;
+  }
+}
+/* footer */
+footer {
+  padding: 2rem;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+.social {
+  padding: 1rem;
+}
+.copy p {
+  color: #161a1d;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+.social ul {
+  list-style: none;
+}
+.social ul li {
+  display: inline;
+  padding: 1rem;
+}
+.social ul li i {
+  font-size: 2rem;
+  color: #161a1d;
+}
+.social ul li a i:hover {
+  color: #e5383b;
+}
+@media (min-width: 768px) {
+  .social ul li i {
+    font-size: 3.5rem;
+  }
+}

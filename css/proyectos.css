@@ -1,0 +1,137 @@
+body {
+  font-family: "Cabin", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f3f4;
+}
+main {
+  flex-grow: 1;
+}
+/* header */
+header img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+header {
+  padding: 0.5rem 2rem;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header a {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #161a1d;
+}
+header a:hover,
+header a:active {
+  color: #e5383b;
+}
+@media (min-width: 1024px) {
+  header img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  header a {
+    font-size: 2.8rem;
+  }
+}
+/* main */
+main {
+  padding: 0 2rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: auto;
+}
+.container-box {
+  width: 100%;
+}
+.container-hero {
+  width: 100%;
+  height: 50vh;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5cd9b3600a38d30001381506/1561733236334-KUSVPLJH8M6RZ7I8UDM4/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/american-portraiture-2.jpg?format=1500w");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  margin: 0.5rem 0;
+}
+.container-hero:hover {
+  transform: translatey(-5px);
+}
+.container-img {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.container-img:hover,
+.container-img:active {
+  cursor: pointer;
+}
+.container-img h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .container-box {
+    padding: 0 1rem;
+    width: 50%;
+  }
+  .container-hero {
+    width: 100%;
+  }
+  .container-img h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* footer */
+footer {
+  padding: 2rem;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+.social {
+  padding: 1rem;
+}
+.copy p {
+  color: #161a1d;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+.social ul {
+  list-style: none;
+}
+.social ul li {
+  display: inline;
+  padding: 1rem;
+}
+.social ul li i {
+  font-size: 2rem;
+  color: #161a1d;
+}
+.social ul li a i:hover {
+  color: #e5383b;
+}
+@media (min-width: 768px) {
+  .social ul li i {
+    font-size: 3.5rem;
+  }
+}
