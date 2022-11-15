@@ -10,6 +10,8 @@ class Barra {
 
   void mostrar() {
     image(plataforma, posX, posY, 90, 25);
+
+    mover();
   }
 
   void mover() {
@@ -28,14 +30,14 @@ class Barra {
   }
 
   boolean colision(int bolaPosX, int bolaPosY) {
-    boolean respuesta = false;
+    boolean esColision = false;
     if ((bolaPosX + 15) < posX || bolaPosX > (posX + 90)) {
-      respuesta = false;
+      esColision = false;
     } else if ((bolaPosY + 15) < posY || bolaPosY > posY) {
-      respuesta = false;
+      esColision = false;
     } else {
-      respuesta = true;
+      esColision = true;
     }
-    return respuesta;
+    return esColision;
   }
 }

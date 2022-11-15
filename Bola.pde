@@ -1,8 +1,11 @@
 class Bola {
+  PImage bolaImg;
 
   int posX, posY, velocidadX, velocidadY, reinicioX, reinicioY;
 
   Bola(int posBolaX, int posBolaY) {
+    bolaImg = loadImage("bola.png");
+
     reinicioX = posBolaX;
     reinicioY = posBolaY;
     posX = posBolaX;
@@ -12,8 +15,9 @@ class Bola {
   };
 
   void mostrar() {
-    fill(0, 255, 0);
-    ellipse(posX, posY, 15, 15);
+    image(bolaImg, posX, posY, 15, 15);
+
+    mover();
   }
 
   void mover() {
@@ -32,20 +36,20 @@ class Bola {
       }
     }
   }
-  
-  void reinicio(){
+
+  void reinicio() {
     posX = reinicioX;
     posY = reinicioY;
   }
-  
-  void invertir(){
+
+  void invertir() {
     velocidadY *= -1;
   }
-  
-  int obtenerX(){
+
+  int obtenerX() {
     return posX;
   }
-  int obtenerY(){
+  int obtenerY() {
     return posY;
   }
 }
