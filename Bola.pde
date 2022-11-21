@@ -1,6 +1,8 @@
 class Bola {
   PImage bolaImg;
 
+  boolean perder;
+
   int posX, posY, velocidadX, velocidadY, reinicioX, reinicioY;
 
   Bola(int posBolaX, int posBolaY) {
@@ -10,8 +12,9 @@ class Bola {
     reinicioY = posBolaY;
     posX = posBolaX;
     posY = posBolaY;
-    velocidadX = 3;
-    velocidadY = 3;
+    velocidadX = 4;
+    velocidadY = 4;
+    perder = false;
   };
 
   void mostrar() {
@@ -32,18 +35,19 @@ class Bola {
       if (posY < 460) {
         velocidadY *= -1;
       } else {
-        reinicio();
+        reiniciar();
+        perder = true;
       }
     }
   }
 
-  void reinicio() {
-    posX = reinicioX;
-    posY = reinicioY;
-  }
-
   void invertir() {
     velocidadY *= -1;
+  }
+
+  void reiniciar() {
+    posX = reinicioX;
+    posY = reinicioY;
   }
 
   int obtenerX() {

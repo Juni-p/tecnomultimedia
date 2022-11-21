@@ -8,3 +8,7 @@ void setup() {
 void draw() {
   arkanoid.mostrar();
 }
+
+void mouseClicked(){
+  arkanoid.eventosBotones();
+};

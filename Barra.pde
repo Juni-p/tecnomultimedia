@@ -2,9 +2,9 @@ class Barra {
   int posX, posY;
   PImage plataforma;
 
-  Barra() {
-    posX = 250;
-    posY = 450;
+  Barra(int _posX, int _posY) {
+    posX = _posX;
+    posY = _posY;
     plataforma = loadImage("plataforma.png");
   }
 

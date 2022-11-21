@@ -1,0 +1,2 @@
+Para jugar a ARKANOID debera mover la plataforma con la tecla izquierda(LEFT) y la tecla derecha(RIGHT).
+El juego  consiste en evitar que la bola se caiga del mapa y eliminar todos los bloques visibles.
