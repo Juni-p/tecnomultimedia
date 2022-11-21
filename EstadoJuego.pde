@@ -27,4 +27,11 @@ class EstadoJuego {
     textSize(40);
     text(texto, width/2, 50);
   }
+
+  //void musicaPlay() {
+  //  sonido.play(1, 0.1);
+  //}
+  //void musicaStop() {
+  //  sonido.stop();
+  //}
 }
