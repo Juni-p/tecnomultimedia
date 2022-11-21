@@ -4,7 +4,7 @@ class Juego {
   int contadorBloquesVisible,contadorBloquesColisionados;
   boolean ganar;
 
-  int cantidadBloques = 1;
+  int cantidadBloques = 8;
 
   Bola bola;
   Barra barra;
