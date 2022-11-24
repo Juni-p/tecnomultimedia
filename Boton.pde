@@ -11,7 +11,7 @@ class Boton {
   }
 
   void mostrar() {
-    if (esHover()) {
+    if (hiceClick()) {
       fill(153, 131, 199);
     } else {
       fill(115, 84, 177);
@@ -26,7 +26,7 @@ class Boton {
     text(texto, posX, posY + 5 );
   }
 
-  boolean esHover() {
+  boolean hiceClick() {
     if (mouseX > posX - ancho/2 && mouseX < (posX + ancho/2) && mouseY > posY - alto/2 && mouseY < (posY + alto/2) ) {
       return true;
     } else {

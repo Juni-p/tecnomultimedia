@@ -1,22 +1,24 @@
-class EstadoJuego {
+class PantallaEstadoJuego {
   PImage fondoEstadoJuego;
 
-  Boton reiniciar;
-  Boton menu;
+  Boton botonReiniciar;
+  Boton botonMenu;
 
   String texto;
+  int pantalla;
 
-  EstadoJuego(String _texto) {
+  PantallaEstadoJuego(String _texto, int _pantalla) {
     fondoEstadoJuego = loadImage("estado.jpg");
-    reiniciar = new Boton(width/2, 350, "REINICIAR");
-    menu = new Boton(width/2, 400, "MENU");
+    botonReiniciar = new Boton(width/2, 350, "REINICIAR");
+    botonMenu = new Boton(width/2, 400, "MENU");
     texto = _texto;
+    pantalla = _pantalla;
   }
 
   void mostrar() {
     image(fondoEstadoJuego, 0, 0, width, height);
-    reiniciar.mostrar();
-    menu.mostrar();
+    botonReiniciar.mostrar();
+    botonMenu.mostrar();
     mostrarTexto();
   }
 
@@ -28,10 +30,13 @@ class EstadoJuego {
     text(texto, width/2, 50);
   }
 
-  //void musicaPlay() {
-  //  sonido.play(1, 0.1);
-  //}
-  //void musicaStop() {
-  //  sonido.stop();
-  //}
+  int mousePresionado() {
+    if (botonReiniciar.hiceClick()) {
+      return 1;
+    }
+    if (botonMenu.hiceClick()) {
+      return 0;
+    }
+    return pantalla;
+  }
 }

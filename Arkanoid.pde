@@ -1,22 +1,23 @@
 class Arkanoid {
-  Juego juego;
+  Juego juegoArkanoid;
 
-  Menu pantallaMenu;
-  Instruccion pantallaInstruccion;
-  Credito pantallaCredito;
-  EstadoJuego pantallaPerder;
-  EstadoJuego pantallaGanar;
+  PantallaMenu pantallaMenu;
+  PantallaInstruccion pantallaInstruccion;
+  PantallaCredito pantallaCredito;
+  PantallaEstadoJuego pantallaPerder;
+  PantallaEstadoJuego pantallaGanar;
 
   int pantalla = 0;
+  int siguientePantalla;
 
   Arkanoid() {
-    juego = new Juego();
+    juegoArkanoid = new Juego();
 
-    pantallaMenu = new Menu();
-    pantallaInstruccion = new Instruccion();
-    pantallaCredito = new Credito();
-    pantallaPerder = new EstadoJuego("PERDISTE");
-    pantallaGanar = new EstadoJuego("GANASTE");
+    pantallaMenu = new PantallaMenu();
+    pantallaInstruccion = new PantallaInstruccion();
+    pantallaCredito = new PantallaCredito();
+    pantallaPerder = new PantallaEstadoJuego("PERDISTE", 4);
+    pantallaGanar = new PantallaEstadoJuego("GANASTE", 5);
   }
 
   void mostrar() {
@@ -25,7 +26,7 @@ class Arkanoid {
     if (pantalla == 0) {
       pantallaMenu.mostrar();
     } else if (pantalla == 1) {
-      juego.mostrar();
+      juegoArkanoid.mostrar();
     } else if (pantalla == 2) {
       pantallaInstruccion.mostrar();
     } else if (pantalla == 3) {
@@ -40,36 +41,41 @@ class Arkanoid {
   }
 
   void eventosEstadoJuego() {
-    if (pantalla == 1 && juego.bola.perder == true) {
+    if (pantalla == 1 && juegoArkanoid.bola.perder == true) {
       pantalla = 4;
-      juego.bola.perder = false;
-    } else if (pantalla == 1 && juego.ganar == true) {
+      juegoArkanoid.bola.perder = false;
+    } else if (pantalla == 1 && juegoArkanoid.ganar == true) {
       pantalla = 5;
-      juego.ganar = false;
+      juegoArkanoid.ganar = false;
     }
   }
 
   void eventosBotones() {
-    if (pantalla == 0 && pantallaMenu.jugar.esHover()) {
-      pantalla = 1;
-    } else if (pantalla == 4 && pantallaPerder.reiniciar.esHover()) {
-      juego.mostrar();
-      pantalla = 1;
-    } else if (pantalla == 4 && pantallaPerder.menu.esHover()) {
-      pantalla = 0;
-    } else if (pantalla == 5 && pantallaGanar.reiniciar.esHover()) {
-      juego.mostrar();
-      pantalla = 1;
-    } else if (pantalla == 5 && pantallaGanar.menu.esHover()) {
-      pantalla = 0;
-    } else if (pantalla == 0 && pantallaMenu.instrucciones.esHover()) {
-      pantalla = 2;
-    } else if (pantalla == 2 && pantallaInstruccion.volver.esHover()) {
-      pantalla = 0;
-    } else if (pantalla == 0 && pantallaMenu.creditos.esHover()) {
-      pantalla = 3;
-    } else if (pantalla == 3 && pantallaCredito.volver.esHover()) {
-      pantalla = 0;
+    if (pantalla == 0) {
+      siguientePantalla = pantallaMenu.mousePresionado();
+      if (siguientePantalla != 0) {
+        pantalla = siguientePantalla;
+      }
+    } else if (pantalla == 2) {
+      siguientePantalla = pantallaInstruccion.mousePresionado();
+      if (siguientePantalla != 2) {
+        pantalla = siguientePantalla;
+      }
+    } else if (pantalla == 3) {
+      siguientePantalla = pantallaCredito.mousePresionado();
+      if (siguientePantalla != 3) {
+        pantalla = siguientePantalla;
+      }
+    } else if (pantalla == 4) {
+      siguientePantalla = pantallaPerder.mousePresionado();
+      if (siguientePantalla != 4) {
+        pantalla = siguientePantalla;
+      }
+    } else if (pantalla == 5) {
+      siguientePantalla = pantallaGanar.mousePresionado();
+      if (siguientePantalla != 5) {
+        pantalla = siguientePantalla;
+      } 
     }
   }
 }

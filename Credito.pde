@@ -1,29 +1,36 @@
-class Credito {
+class PantallaCredito {
   PImage fondoCredito;
 
-  String[] creditos;
+  String[] textoCreditos;
 
-  Boton volver;
+  Boton botonVolver;
 
-  Credito() {
+  PantallaCredito() {
     fondoCredito = loadImage("credito.jpg");
-    creditos = loadStrings("creditos.txt");
-    volver = new Boton(width/2, 300, "VOLVER");
+    textoCreditos = loadStrings("creditos.txt");
+    botonVolver = new Boton(width/2, 300, "VOLVER");
   }
 
   void mostrar() {
     image(fondoCredito, 0, 0, width, height);
-    volver.mostrar();
+    botonVolver.mostrar();
     mostrarTexto();
   };
 
   void mostrarTexto() {
     rectMode(CORNER);
-    for (int i = 0; i < creditos.length; i++) {
+    for (int i = 0; i < textoCreditos.length; i++) {
       fill(221, 236, 251);
       textAlign(CENTER);
       textSize(20);
-      text(creditos[i], 0, 50 + 50 * i, 500, 250);
+      text(textoCreditos[i], 0, 50 + 50 * i, 500, 250);
     }
+  }
+
+  int mousePresionado() {
+    if (botonVolver.hiceClick()) {
+      return 0;
+    }
+    return 3;
   }
 }

@@ -1,7 +1,7 @@
 class Juego {
   PImage fondoArkanoid;
 
-  int contadorBloquesVisible,contadorBloquesColisionados;
+  int contadorBloquesVisible, contadorBloquesColisionados;
   boolean ganar;
 
   int cantidadBloques = 8;
@@ -12,7 +12,7 @@ class Juego {
 
   Juego() {
     fondoArkanoid = loadImage("fondo.jpg");
-    
+
     ganar = false;
 
     contadorBloquesVisible = 0;

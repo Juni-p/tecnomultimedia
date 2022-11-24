@@ -1,25 +1,38 @@
-class Menu {
-  Boton jugar;
-  Boton creditos;
-  Boton instrucciones;
-  
+class PantallaMenu {
+  Boton botonJugar;
+  Boton botonCreditos;
+  Boton botonInstrucciones;
+
   PImage fondoMenu;
 
-  Menu() {
+  PantallaMenu() {
     fondoMenu = loadImage("menu.jpg");
-    jugar = new Boton(width/2,350,"JUGAR");
-    instrucciones = new Boton(width/2,400,"INTRUCCIONES");
-    creditos = new Boton(width/2,450,"CREDITOS");
+    botonJugar = new Boton(width/2, 350, "JUGAR");
+    botonInstrucciones = new Boton(width/2, 400, "INTRUCCIONES");
+    botonCreditos = new Boton(width/2, 450, "CREDITOS");
   }
 
   void mostrar() {
     image(fondoMenu, 0, 0, width, height);
     botonesMenu();
   }
-  
-  void botonesMenu(){
-    jugar.mostrar();
-    instrucciones.mostrar();
-    creditos.mostrar();
+
+  void botonesMenu() {
+    botonJugar.mostrar();
+    botonInstrucciones.mostrar();
+    botonCreditos.mostrar();
+  }
+
+  int mousePresionado() {
+    if (botonJugar.hiceClick()) {
+      return 1;
+    }
+    if (botonInstrucciones.hiceClick()) {
+      return 2;
+    }
+    if (botonCreditos.hiceClick()) {
+      return 3;
+    }
+    return 0;
   }
 }
