@@ -31,22 +31,18 @@ class Arkanoid {
       pantallaInstruccion.mostrar();
     } else if (pantalla == 3) {
       pantallaCredito.mostrar();
-    } 
-    if (pantalla == 4) {
+    } else if (pantalla == 4) {
       pantallaPerder.mostrar();
-    } 
-    if (pantalla == 5) {
+    } else if (pantalla == 5) {
       pantallaGanar.mostrar();
     }
   }
 
   void eventosEstadoJuego() {
-    if (pantalla == 1 && juegoArkanoid.bola.perder == true) {
+    if (pantalla == 1 && juegoArkanoid.perder()) {
       pantalla = 4;
-      juegoArkanoid.bola.perder = false;
-    } else if (pantalla == 1 && juegoArkanoid.ganar == true) {
+    } else if (pantalla == 1 && juegoArkanoid.ganar()) {
       pantalla = 5;
-      juegoArkanoid.ganar = false;
     }
   }
 
@@ -75,7 +71,7 @@ class Arkanoid {
       siguientePantalla = pantallaGanar.mousePresionado();
       if (siguientePantalla != 5) {
         pantalla = siguientePantalla;
-      } 
+      }
     }
   }
 }

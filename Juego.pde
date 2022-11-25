@@ -19,6 +19,7 @@ class Juego {
     contadorBloquesColisionados = 0;
 
     generarBloques();
+
     bola = new Bola(width/2, height/2);
     barra = new Barra(250, 450);
   }
@@ -42,10 +43,6 @@ class Juego {
       }
     }
 
-    if (contadorBloquesVisible - contadorBloquesColisionados == 0) {
-      ganar = true;
-    }
-
     if (barra.colision(bola.obtenerX(), bola.obtenerY())) {
       bola.invertir();
     }
@@ -64,4 +61,28 @@ class Juego {
       }
     }
   }
+
+  boolean perder() {
+    if (bola.bolaCaida()) {
+      reiniciarJuego();
+      return true;
+    }
+    return false;
+  };
+
+  boolean ganar() {
+    if (contadorBloquesVisible != 0 && contadorBloquesColisionados != 0) {
+      if (contadorBloquesVisible - contadorBloquesColisionados == 0) {
+        reiniciarJuego();
+        return true;
+      }
+    }
+    return false;
+  }
+
+  void reiniciarJuego() {
+    contadorBloquesColisionados = 0;
+    contadorBloquesVisible = 0;
+    generarBloques();
+  };
 }

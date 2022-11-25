@@ -1,7 +1,7 @@
 class Bola {
   PImage bolaImg;
 
-  boolean perder;
+  boolean bolaCaida;
 
   int posX, posY, velocidadX, velocidadY, reinicioX, reinicioY;
 
@@ -14,7 +14,7 @@ class Bola {
     posY = posBolaY;
     velocidadX = 4;
     velocidadY = 4;
-    perder = false;
+    bolaCaida = false;
   };
 
   void mostrar() {
@@ -36,7 +36,7 @@ class Bola {
         velocidadY *= -1;
       } else {
         reiniciar();
-        perder = true;
+        bolaCaida = true;
       }
     }
   }
@@ -55,5 +55,13 @@ class Bola {
   }
   int obtenerY() {
     return posY;
+  }
+
+  boolean bolaCaida() {
+    if (bolaCaida == true) {
+      bolaCaida = false;
+      return true;
+    }
+    return false;
   }
 }
