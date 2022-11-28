@@ -25,6 +25,9 @@ class Juego {
   }
 
   void mostrar() {
+    println(ganar);
+    println(contadorBloquesVisible);
+    println(contadorBloquesColisionados);
     image(fondoArkanoid, 0, 0, width, height);
 
     bola.mostrar();
@@ -81,8 +84,17 @@ class Juego {
   }
 
   void reiniciarJuego() {
+    for (int i = 0; i < cantidadBloques; i++) {
+      for (int j = 0; j < cantidadBloques; j++) {
+        if (bloques[i][j] != null) {
+            bloques[i][j] = null;
+          }
+        }
+      }
+
     contadorBloquesColisionados = 0;
     contadorBloquesVisible = 0;
+    bola.reiniciar();
     generarBloques();
   };
 }

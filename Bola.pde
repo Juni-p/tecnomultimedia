@@ -35,7 +35,7 @@ class Bola {
       if (posY < 460) {
         velocidadY *= -1;
       } else {
-        reiniciar();
+        //reiniciar();
         bolaCaida = true;
       }
     }

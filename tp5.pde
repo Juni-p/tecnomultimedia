@@ -1,3 +1,11 @@
+/*
+
+  Junior Vitteri.
+  Legajo: 91496/1.
+  Video: https://youtu.be/fvyVKKOYIpk
+  
+*/
+
 Arkanoid arkanoid;
 import processing.sound.*;
 
