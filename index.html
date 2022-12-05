@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <title>Junior Vitteri</title>
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <h1 class="mb-4">Junior Vitteri</h1>
+
+      <div class="row">
+        <div class="col-md-4">
+          <img
+            src="/img/foto-perfil.jpeg"
+            class="img-thumbnail"
+            alt="foto de junior vitteri de frente estilo caricatura"
+          />
+          <h2 class="text-center">Sobre mí</h2>
+          <p class="text-center">
+            Soy un estudiante de primer año de la carrera de diseño multimedial
+            en la Facultad de Artes de la UNLP. Actualmente estoy realizando el
+            último trabajo de la materia tecnología multimedial 1.
+          </p>
+        </div>
+
+        <div class="col-md-8">
+          <h2 class="fs-1 text-decoration-underline mb-4">Mis proyectos</h2>
+          <h3>Juego de memoria</h3>
+          <div id="memogame" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" style="max-height: 100%">
+              <div class="carousel-item active">
+                <img
+                  src="/img/memogame1.png"
+                  class="d-block w-100 h-100"
+                  alt="pantalla de inicio de mi juego de memoria"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/img/memogame2.png"
+                  class="d-block w-100 h-100"
+                  alt="pantalla del juego de mi juego de memoria en accion"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/img/memogame3.png"
+                  class="d-block w-100 h-100"
+                  alt="pantalla ganadora de mi juego de memoria"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#memogame"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#memogame"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <p>
+            Desarrollé un juego que consistia en adivinar el par de cartas con
+            el mismo número. Fue hecho con processing para la materia tecnología
+            multimedial 1.
+          </p>
+
+          <h3>Arkanoid</h3>
+          <div id="arkanoid" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" style="max-height: 100%">
+              <div class="carousel-item active">
+                <img
+                  src="/img/arkanoid1.png"
+                  class="d-block w-100"
+                  alt="pantalla de inicio de mi juego arkanoid"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/img/arkanoid2.png"
+                  class="d-block w-100"
+                  alt="pantalla de mi juego arkanoid en accion"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="/img/arkanoid3.png"
+                  class="d-block w-100"
+                  alt="pantalla perdedora de mi juego arkanoid"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#arkanoid"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#arkanoid"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <p>
+            Desarrollé un juego inspirado en el clásico juego Arkanoid, que
+            consiste en eliminar todos los bloques visibles mientras evitas que
+            la bola caiga. Fue hecho con processing bajo el paradigma de
+            programación orientado a objetos.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
